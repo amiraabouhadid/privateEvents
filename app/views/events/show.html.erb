@@ -1,6 +1,37 @@
-<p id="notice"><%= notice %></p>
-<%= @event.attendees.each do |t| %>
-<p><%= attendee.name %></p>
-<% end %>
-<%= link_to 'Edit', edit_event_path(@event) %> |
-<%= link_to 'Back', events_path %>
+<section>
+  <table>
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Location</th>
+        <th>Start Date & Time</th>
+        <th>End Date & Time</th>
+        <th>Host</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><%= @event.title %></td>
+        <td><%= @event.location %></td>
+        <td><%= @event.start_date_time %></td>
+        <td><%= @event.end_date_time %></td>
+        <td><%= @event.creator.name %></td>
+
+      </tr>
+    </tbody>
+
+  </table>
+
+</section>
+<section>
+  <h2>Attendees:</h2>
+  <div class="">
+    <% @event.attendees.each do |attendee| %>
+    <p><%= attendee.name %></p>
+    <% end %>
+  </div>
+</section>
+<section>
+  <%= form_with(model: @invitation) do |form| %>
+</section>
