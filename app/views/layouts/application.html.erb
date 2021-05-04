@@ -1,16 +1,68 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>PrivateEvents</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+<head>
+  <title>PrivateEvents</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= stylesheet_link_tag "https://pro.fontawesome.com/releases/v5.10.0/css/all.css" %>
+  <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
 
-  <body>
-    <%= yield %>
-  </body>
+<body>
+  <% if flash[:notice] %>
+    <div class="bg-primary">
+      <p class='notice'>
+        <%= notice %></p>
+    </div>
+  <% end %>
+  <% if flash[:alert] %>
+    <div class="bg-danger">
+      <p class='alert'>
+        <%= alert %></p>
+    </div>
+  <% end %>
+  <nav class="navbar bg-info">
+  <div class="navbar-brand d-flex mx-auto">
+    <%= link_to root_path, class: "navbar-item" do %>
+    <h1 class='display-4 font-weight-bolder text-light'>Members Only</h1>
+    <% end %>
+    <div class="navbar-burger burger" data-target="navbarExample">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+
+  <div id="navbarExample" class="navbar-menu" >
+    <div class="">
+      <div class="d-flex mx-auto justify-content-between">
+        <p class="btn btn-light mx-3">
+          <%= link_to 'New event', new_event_path, class: "btn text-dark" %>
+        </p>
+        <% if user_signed_in? %>
+          <p class="btn btn-light mx-3">
+            <%= link_to current_user.name, edit_user_registration_path, class: "btn text-dark" %>
+          </p >
+          <p class="btn btn-light mx-3">
+            <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "btn text-dark" %>
+          </p>
+          <% else %>
+          <p class="btn btn-light mx-3">
+            <%= link_to 'Sign In', new_user_session_path, class: "btn text-dark" %>
+          </p>
+          <p class="btn btn-light mx-3">
+            <%= link_to 'Sign Up', new_user_registration_path, class: "btn text-dark" %>
+          </p>
+          <% end %>
+
+
+      </div>
+    </div>
+  </div>
+  </nav>
+  <%= yield %>
+</body>
 </html>
