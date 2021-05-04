@@ -2,7 +2,7 @@
   <article class="">
 
     <p>Welcome to Private Events</p>
-    <p>Feel free to create events and invite other users or accept other user's invitations!</p>
+    <p>Feel free to create events and invite other users or accept other users' invitations!</p>
 
   </article>
 
@@ -19,15 +19,18 @@
 
     <div class="">
       <div class="">
-
-          <strong><%= event.user.username %></strong>
           <br>
-          <small><%= event.created_at %></small>
+          <i>Title: <%= event.title %></i>
           <br>
-          <i><%= event.title %></i>
-          <b><%= event.location %></b>
-          <b><%= event.date %></b>
+          <b>Location: <%= event.location %></b>
+          <br>
+          <b>Starts: <%= event.start_date_time %></b>
+          <br>
+          <b>Ends: <%= event.end_date_time %></b>
+          <br>
           <p><%= event.description %></p>
+          <br>
+          <p>Host: <%= event.creator.name %></p>
         </div>
 
         <nav class="level">
@@ -47,7 +50,6 @@
           <i class="fa fa-trash" aria-hidden="true"></i>
         </span>
       <% end %>
-
 
   </div>
 </nav>
