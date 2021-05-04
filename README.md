@@ -1,8 +1,8 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# RUBY ON RAILS PROJECT: TWITTER CLONE
+# RUBY ON RAILS PROJECT: PRIVATE EVENTS
 
-This project is taken from the Odin Project Ruby on Rails curriculum. It is an exclusive clubhouse where members can write anonymous posts. Other members can see the post's author but non-members can only see the post.
+This project is taken from the Odin Project Ruby on Rails curriculum. It is a website where only members can create or enroll in events. Creators can invite other users to their events.  
 
 
 ## Built With
@@ -25,9 +25,9 @@ Clone repository from github to your local drive by following these steps:
 - Go to the main page of the repository
 - Above the listed files, click the green Code button
 - You can clone the repository using:
-  - GitHub CLI: gh repo clone amiraabouhadid/members-only.git.
-  - SSH:git clone git@github.com:amiraabouhadid/members-only.git.
-  - HTTPS:git clone https://github.com/amiraabouhadid/members-only.git.
+  - GitHub CLI: gh repo clone amiraabouhadid/privateEvents.git.
+  - SSH:git clone git@github.com:amiraabouhadid/privateEvents.git.
+  - HTTPS:git clone https://github.com/amiraabouhadid/privateEvents.git.
 - Open Terminal
 - Change the current working directory to the location you want the cloned directory
 - Type one of the git clone commands listed above.
@@ -55,7 +55,7 @@ Clone repository from github to your local drive by following these steps:
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](https://github.com/amiraabouhadid/members-only/issues).
+Feel free to check the [issues page](https://github.com/amiraabouhadid/privateEvents/issues).
 
 ## Show your support
 
