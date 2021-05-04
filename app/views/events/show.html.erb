@@ -5,8 +5,10 @@
       <tr>
         <th>Title</th>
         <th>Location</th>
-        <th>Start </th>
-        <th>End </th>
+        <th>Start
+        </th>
+        <th>End
+        </th>
         <th>Host</th>
         <th>Description</th>
       </tr>
@@ -27,24 +29,24 @@
 </section>
 <section class="container-fluid mx-auto text-center">
   <% if user_signed_in? %>
-  <h3>Attendees:</h3>
-  <div class="">
-    <% @event.attendees.each do |attendee| %>
-    <p><%= attendee.name %></p>
-    <% end %>
-  </div>
-</section>
-<section class="container-fluid mx-auto text-center">
-  <%= form_with(model: @invitation) do |form| %>
-  <div class="field">
-    <%= form.number_field :user_id, value:current_user.id , type: :hidden %>
-  </div>
-  <div class="field">
-    <%= form.number_field :event_id, value:@event.id , type: :hidden %>
-  </div>
-  <div class="actions">
-    <%= form.submit "Enroll", class: 'btn btn-primary' %>
-  </div>
+    <h3>Attendees:</h3>
+    <div class="">
+      <% @event.attendees.each do |attendee| %>
+        <p><%= attendee.name %></p>
+      <% end %>
+    </div>
+  </section>
+  <section class="container-fluid mx-auto text-center">
+    <%= form_with(model: @invitation) do |form| %>
+    <div class="field">
+      <%= form.number_field :user_id, value:current_user.id , type: :hidden %>
+    </div>
+    <div class="field">
+      <%= form.number_field :event_id, value:@event.id , type: :hidden %>
+    </div>
+    <div class="actions">
+      <%= form.submit "Enroll", class: 'btn btn-primary' %>
+    </div>
   <% end %>
-  <% end %>
+<% end %>
 </section>
