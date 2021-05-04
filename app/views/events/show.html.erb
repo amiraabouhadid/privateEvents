@@ -1,4 +1,5 @@
 <section>
+
   <table class="mx-auto text-center table table-table-bordered table-hover">
     <thead>
       <tr>
@@ -25,6 +26,7 @@
 
 </section>
 <section class="container-fluid mx-auto text-center">
+  <% if user_signed_in? %>
   <h3>Attendees:</h3>
   <div class="">
     <% @event.attendees.each do |attendee| %>
@@ -43,5 +45,6 @@
   <div class="actions">
     <%= form.submit "Enroll", class: 'btn btn-primary' %>
   </div>
+  <% end %>
   <% end %>
 </section>
