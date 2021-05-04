@@ -35,6 +35,11 @@ class EventsController < ApplicationController
     end
   end
 
+  def correct_user
+    @event = current_user.created_events.find_by(id: params[:id])
+    redirect_to events_path, alert: "You're not authorized to edit this event" if @event.nil?
+  end
+
   # PATCH/PUT /events/1 or /events/1.json
   def update
     respond_to do |format|

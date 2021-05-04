@@ -1,9 +1,11 @@
-<h1>current_user.name 's Created Events</h1>
-<div class="d-flex justify-content-between flex-wrap">
+
+<section class="container-fluid text-center mx-auto my-4">
+<h1><%=current_user.name %>'s Created Events</h1>
+<div class="d-flex justify-content-around flex-wrap">
   <% @created_events.each do |event| %>
     <div class="card">
       <div class="card-header">
-        <h4><%= event.name %></h4>
+        <h4><%= event.title %></h4>
         <p><%= event.creator.name %></p>
       </div>
       <div class="card-body">
@@ -33,18 +35,18 @@
     </div>
   </nav>
 </div>
-
 </div>
 <% end %>
-
 </div>
+</section>
 
-<h1>current_user.name 's Upcoming Events'</h1>
-<div class="d-flex justify-content-between flex-wrap">
+<section class="container-fluid text-center mx-auto my-4">
+<h1><%=current_user.name %>'s Upcoming Events</h1>
+<div class="d-flex justify-content-around flex-wrap">
   <% @upcoming_events.each do |event| %>
     <div class="card">
       <div class="card-header">
-        <h4><%= event.name %></h4>
+        <h4><%= event.title %></h4>
         <p><%= event.creator.name %></p>
       </div>
       <div class="card-body">
@@ -70,21 +72,21 @@
           <i class="fa fa-trash" aria-hidden="true"></i>
         </span>
       <% end %>
-
     </div>
   </nav>
 </div>
-
 </div>
 <% end %>
-
 </div>
-<h1>current_user.name 's Past Events'</h1>
-<div class="d-flex justify-content-between flex-wrap">
+</section>
+
+<section class="container-fluid text-center mx-auto my-4">
+<h1><%=current_user.name %>'s Past Events</h1>
+<div class="d-flex justify-content-around flex-wrap">
   <% @created_events.each do |event| %>
     <div class="card">
       <div class="card-header">
-        <h4><%= event.name %></h4>
+        <h4><%= event.title %></h4>
         <p><%= event.creator.name %></p>
       </div>
       <div class="card-body">
@@ -92,7 +94,6 @@
         <p><%= event.location %></p>
         <small><%= event.start_date_time %></small>
         <small><%= event.end_date_time %></small>
-
         <nav class="level">
           <div class="">
             <%= link_to event, class: "level-item" do %>
@@ -110,12 +111,10 @@
           <i class="fa fa-trash" aria-hidden="true"></i>
         </span>
       <% end %>
-
     </div>
   </nav>
 </div>
-
 </div>
 <% end %>
-
 </div>
+</section>
