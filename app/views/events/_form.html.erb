@@ -1,0 +1,15 @@
+<%= simple_form_for(@event) do |f| %>
+<%= f.error_notification %>
+<div class="field">
+  <div class="control">
+
+    <%= f.input :title, label: "Enter Event Title:", input_html: { class: "string"}, wrapper: false, label_html: { class: "label"}, placeholder: "compose a new event title...", autofocus: true %>
+    <%= f.input :description, label: "Enter Event Description", input_html: { class: "text"}, wrapper: false, label_html: {class: "label"} %>
+    <%= f.input :location, label: "Enter Event Location", input_html: { class: "string"}, wrapper: false, label_html: {class: "label"} %>
+    <%= f.input :start_date_time, label: "Enter Event start date and time", input_html: { class: "datetime"}, wrapper: false, label_html: {class: "label"} %>
+    <%= f.input :end_date_time, label: "Enter Event end date and time", input_html: { class: "datetime"}, wrapper: false, label_html: {class: "label"} %>
+  </div>
+</div>
+
+<%= f.button :submit, class: "button bg-info" %>
+<% end %>
